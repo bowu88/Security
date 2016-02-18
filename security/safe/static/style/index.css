@@ -1,0 +1,261 @@
+.content a{
+	text-decoration: none;
+	color: rgb(0, 0, 0);
+}
+.content a:hover{
+	color: green;
+}
+.main{
+	width: 100%;
+}
+/* 背景图片 */
+.main-top{
+	position: relative;
+	width: 100%;
+}
+.main-top img{
+	max-width: 100%;
+}
+	/* 头条信息 */
+	.topic{
+		width: 49.1947%;
+		height: 93.0875%;
+		position: absolute;
+		top: 0;
+		right: 1.9034%;
+	}
+	.topic>div{
+		width: 100%;
+		height: 100%;
+		position: relative;
+	}
+	.topic-section{
+		font-size: 5px;
+		border-radius: 5.6%;
+		background-color: rgb(255, 255, 255);
+		color: rgb(102, 134, 183);
+	}
+	.topic-section img:first-child{
+		display: block;
+		width: 92.8571%;
+		margin: 0 auto;
+		border-radius: 6.1538%;
+		position: relative;
+		top: 3.9285%;
+	}
+	.topic-section h1{
+		width: 92.8571%;
+		height: 8%;
+		margin: 0 auto;
+		position: relative;
+		top: 3.9285%;
+		font-size: 1em;
+		font-weight: bolder;
+		line-height: 1.5em;
+		text-align: center;
+		overflow: hidden;
+	}
+	.topic-section p{
+		width: 92.8571%;
+		height: 27.9285%;
+		position: relative;
+		top: 3.9285%;
+		margin: 0 auto;
+		font-size: 0.875em;
+		line-height: 1.2857em;
+		overflow: hidden !important;
+	}
+	.topic-section img:last-child{
+		display: block;
+		position: absolute;
+		right: 4.8%;
+		bottom: 1.1194%;
+	}
+	.topic-section a{
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+	/* 滑块 */
+	.scroll{
+		width: 50.4464%;
+		height: 3.4653%;
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+	}
+	.scroll-position{
+		position: relative;
+		width: 100%;
+		height: 100%;
+		right: 50%;
+		background-image: url(../images/scroll-back.png);
+	}
+	.scroll-left, .scroll-center, .scroll-right{
+		width: 33.3333%;
+		height: 100%;
+		float: left;
+	}
+	#scroll{
+		position: absolute;
+		top: 0;
+		left: 33.3333%;
+	}
+/* 白色内容区 */
+.content{
+	position: relative;
+	width: 77.0863%;
+	background-color: rgb(255, 255, 255);
+	margin: 0 auto;
+}
+.content-banner{
+	display: block;
+	max-width: 97.2459%;
+	margin: 0 auto;
+	padding-top: 1.4648%;
+}
+.section{
+	width: 97.2459%;
+	margin: 0 auto;
+	padding-top: 1.1718%;
+}
+	/* 主要内容 */
+	.s-box{
+		-moz-box-shadow:5px 5px 3px 5px rgb(213, 213, 213);
+   		-webkit-box-shadow:5px 5px 3px 5px rgb(213, 213, 213);
+    	box-shadow:5px 5px 5px 3px rgb(213, 213, 213);
+	}
+	.section aside{
+		width: 37.6953%;
+		float: left;
+	}
+	/* 专题 */
+	.subject, .subject-img, .subject>p{
+		width: 100%;
+	}
+	.subject{
+		position: relative;
+		overflow: auto;
+	}
+	.subject ul li{
+		list-style: none;
+		float: left;
+	}
+	.subject ol{
+		position: absolute;
+		bottom: 50px;
+		right: 4%;
+	}
+	.subject ol li{
+		display: inline-block;
+		margin: 4px;
+		border-radius: 5px;
+		background-color: rgb(214, 214, 213);
+		padding: 5px;
+		cursor: pointer;
+		color: white;
+	}
+	.subject ol li:hover{
+		background-color: rgb(246, 182, 58);
+	}
+	.subject-img img{
+		display: block;
+		max-width: 100%;
+		margin: 0 auto;
+	}
+	.subject p{
+		text-align: center;
+		line-height: 2.5625em;
+	}
+	/* 处长信箱 */
+	.mail{
+		width: 48.4455%;
+		height: 72px;
+		margin-top: 5.6994%;
+		margin-bottom: 4.1450%;
+		float: left;
+		background-image: url(../images/mail.jpg);
+		background-size: 100% 100%;
+	}
+	/* 天气动态 */
+	.weather{
+		width: 48.4455%;
+		margin-top: 5.6994%;
+		margin-bottom: 4.1450%;
+		float: right;
+		text-align: center;
+	}
+	/* 常用电话 */
+	.contact{
+		width: 100%;
+		margin-top: 4.1450%;
+		clear: both;
+	}
+		/* 该内容标签 */
+		.contact>*{
+			display: block;
+			margin-left: 12.9533%;
+		}
+		.contact img{
+			width: 45.5958%;
+			max-width: 100%;
+		}
+		.contact span{
+			font-size: 0.875em;
+			line-height: 2.3571em;
+		}
+	/*-------------*/
+	.s-main{
+		width: 58.8867%;
+		float: right;
+	}
+		/* 通知公告 安全动态 */
+		.s-main-box{
+			position: relative;
+			width: 100%;
+		}
+		.s-main-box>p{
+			margin-left: 1.9900%;
+			width: 91.3764%;
+		}
+		.s-main-box>p:first-child{
+			padding-top: 3.4825%;
+		}
+		.s-main-box>p:last-child{
+			padding-bottom: 3.4825%;
+		}
+		.s-main-box span{
+			font-size: 1em;
+			line-height: 2em;
+		}
+		.s-main-box span:first-child{
+			float: left;
+		}
+		.s-main-box span:last-child{
+			float: right;
+		}
+		.s-main-clear{
+			clear: both;
+		}
+		.tag{
+			width: 29.1873%;
+			max-width: 100%;
+			margin-left: 1.9900%;
+		}
+		.safe{
+			margin-top: 3.9800%;
+		}
+		.more{
+			width: 14.9253%;
+			max-width: 100%;
+			display: block;
+			position: absolute;
+			top: 3.4825%;
+			right: 0.8291%;
+		}
+	/*-------------*/
+	.clear{
+		clear: both;
+		width: 100%;
+		margin-bottom: 1.3671%;
+	}

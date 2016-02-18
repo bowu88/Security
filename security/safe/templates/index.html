@@ -1,0 +1,301 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'style/index.css' %}">
+<script src="{% static 'script/unslider.js' %}"></script>
+    <script src="{% static 'script/jquery.bez.min.js' %}"></script>
+    <script src="{% static 'script/jquery.transform.min.js' %}"></script>
+    <script src="{% static 'script/mg.min.js' %}"></script>
+    <style type="text/css">
+        [id^="example9-"]{
+                font-family: sans-serif;
+                text-decoration: none;
+                margin:10px;
+        }
+        [id^="example9-"]{
+                display:block;
+                position:absolute;
+                width:163.106px;
+                height:176.157px;
+        }
+        #example9-click-scrollOut{
+            color:#3c3c3c;
+            background: rgb(23, 98, 151);
+            border-radius: 15px;
+            display:block;
+            position:absolute;
+            bottom: 0;
+            left: 15%;
+            width:70%;
+            height:19px;
+            margin:0px 10px;padding:0px;
+            border:0px solid #3c3c3c;
+        }
+        #example9-click-scrollIn{
+            color:#3c3c3c;
+            border:2px solid rgb(9, 110, 176);
+            border-radius: 15px;
+            background: #fcfcfc;
+            display:block;
+            position:absolute;
+            width:60px;
+            height:15px;
+            background:rgb(21, 89, 137);
+            margin:0px;padding:0px;
+        }
+        #example9-click-dragOut{
+            border-radius:20px;
+            overflow:hidden;
+            float:left;
+            width:490px;
+            height:190px;
+            left:0px;
+            margin:0px;padding:0px;
+            border:2px solid #e2e2e2;
+        }
+        #example9-click-dragIn{
+            display:block;
+            position:absolute;
+            width:1200px;
+            height:190px;
+            margin:0px;padding:0px;
+        }
+        #example9-click-dragOut {
+            opacity:0;filter:alpha(opacity=0);border-radius:0px;
+            width:520px;
+            height:210px;
+        }
+        #example9-click-dragIn {
+            opacity:0;filter:alpha(opacity=0);border-radius:0px;
+            height:210px;
+        }
+    </style>
+    <script type="text/javascript">
+// bezier animations
+var bez = $.bez([.19,1,.22,1]);
+var bezcss = ".19,1,.22,1";
+/* Get css3 transition and transform prefixes */
+function mg_getProperty(arr0, arr1, arr2){
+    var tmp = document.createElement("div");
+    for(var i=0, len=arr0.length; i<len; i++){
+        tmp.style[arr0[i]] = 800;
+        if(typeof tmp.style[arr0[i]] == 'string'){
+            return {
+                js: arr0[i],
+                css: arr1[i],
+                jsEnd: arr2[i]
+            };
+        }
+    }
+    return null;
+}
+function mg_getTransition(){
+    var arr0 = ["transition", "msTransition", "MozTransition", "WebkitTransition", "OTransition", "KhtmlTransition"];
+    var arr1 = ["transition", "-ms-transition", "-moz-transition", "-webkit-transition", "-o-transition", "-khtml-transition"];
+    var arr2 = ["transitionend", "MSTransitionEnd", "transitionend", "webkitTransitionEnd", "oTransitionEnd", "khtmlTransitionEnd"];
+    return mg_getProperty(arr0, arr1, arr2);
+}
+function mg_getTransform(){
+    var arr0 = ["transform", "msTransform", "MozTransform", "WebkitTransform", "OTransform", "KhtmlTransform"];
+    var arr1 = ["transform", "-ms-transform", "-moz-transform", "-webkit-transform", "-o-transform", "-khtml-transform"];
+    return mg_getProperty(arr0, arr1, []);
+}
+function mg_getPerspective(){
+    var arr0 = ["perspective", "msPerspective", "MozPerspective", "WebkitPerspective", "OPerspective", "KhtmlPerspective"];
+    var arr1 = ["perspective", "-ms-perspective", "-moz-perspective", "-webkit-perspective", "-o-perspective", "-khtml-perspective"];
+    return mg_getProperty(arr0, arr1, []);
+}
+var transition = mg_getTransition();
+var transform = mg_getTransform();
+var perspective = mg_getPerspective();
+
+</script>
+<section class="main">
+    <div class="main-top">
+        <img src="{% static 'images/background-01.png' %}" alt="背景图">
+        <div class="topic">
+            <div><!--解决定位问题-->
+                <div id="example9-click-dragOut">
+                    <div id="example9-click-dragIn"></div>
+                </div>
+                {% for i,topic,word in img_topic %}
+                <div class="topic-section" id="example9-item-{{ i }}" style="background-image: url({{ word }});background-size:cover">
+                    <a href="/articles/{{ topic.id }}"></a>
+                </div>
+                {% endfor %}
+                <div style="clear:both;"></div>
+                <div id="example9-click-scrollOut"><div id="example9-click-scrollIn"></div></div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <img src="{% static 'banner/banner.jpg' %}" alt="" class="content-banner">
+        <div class="section">
+            <aside>
+                <div class="subject s-box">
+                    <ul>
+                        {% for photo, img_url in img_article %}
+                        <li>
+                            <div class="subject-img">
+                                <a href="/articles/{{ photo.id }}">
+                                    <img src="{{ img_url }}" alt="图片">
+                                </a>
+                            </div>
+                            <a href="/articles/{{ photo.id }}">
+                                <p>{{ photo.title }}</p>
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="mail s-box"></div>
+                <div class="weather s-box">
+                    <iframe width="155" scrolling="no" height="100" frameborder="0" allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&id=25&icon=1&num=3"></iframe>
+                </div>
+                <div class="contact s-box">
+                    <img src="/static/images/contact.png" alt="">
+                    <span>匪察：110&nbsp;&nbsp;&nbsp;急救：120</span>
+                    <span>火警：119&nbsp;&nbsp;&nbsp;交通：122</span>
+                    <span>值班室：87532535</span>
+                    <span>治安科：67842250</span>
+                    <span>校园报警：67843110</span>
+                    <span>铁箕山派出所：87400110 / 85391757</span>
+                </div>
+            </aside>
+            <div class="s-main">
+                <div class="s-main-box s-box">
+                    <img src="{% static 'images/tell.png' %}" alt="通知公告" class="tag">
+                    <a href="/notice/">
+                        <img src="{% static 'images/more.png' %}" alt="more" class="more">
+                    </a>
+                    {% for notice in notices %}
+                    <p>
+                        <a href="/articles/{{ notice.id }}" id="{{ notice.id }}" target="_blank">
+                            <span>{{ notice.title }}</span>
+                            <span>{{ notice.time }}</span>
+                            <div class="s-main-clear"></div>
+                        </a>
+                    </p>
+                    {% endfor %}
+                </div>
+                <div class="s-main-box s-box safe">
+                    <img src="{% static 'images/safe.png' %}" alt="安全动态" class="tag">
+                    <a href="/action/">
+                        <img src="{% static 'images/more.png' %}" alt="more" class="more">
+                    </a>
+                    {% for dynamic in dynamics %}
+                    <p>
+                        <a href="/articles/{{ dynamic.id }}" id="{{ dynamic.id }}" target="_blank">
+                            <span>{{ dynamic.title }}</span>
+                            <span>{{ dynamic.time }}</span>
+                            <div class="s-main-clear"></div>
+                        </a>
+                    </p>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</section>
+<script type="text/javascript">
+$(function() {
+    $('.subject').unslider({
+        dots: true
+    });
+});
+</script>
+<script type="text/javascript">
+
+var example9 = new Mg({
+    reference:"example9",
+    click:{
+        activated:[6],
+        cycle:true,
+        interactive:true,
+        multiLess:7, multiPlus:7,
+        scrollWheel:true, dragWheel:true
+    }
+});
+example9.click.onEvent = function(){
+    var arr = this.multiActivated;
+    var alpha = Math.PI*2/(arr.length);
+    var xradius = 200;
+    var yradius = 60;
+    for (var i=0;i<arr.length;i++){
+        var path = $("#"+this.reference+"-item-"+ arr[i]);
+        if(arr[i]==this.activated){
+            var depth = 0;
+        } else {
+            var depth = example9.mapDistanceReverse(this.multiPlus, i, arr.length, 0);
+        }
+        //
+        var theta = alpha*(this.activated-arr[i]-depth/6)+1.6; // -depth/6 will give additional distance based on depth: it gives space for activated
+        var x = 20+xradius+Math.cos(theta)*xradius;
+        var y = yradius+Math.sin(theta)*yradius;
+        var w = h = y/4;
+        var scale = 0.2+y/140;
+        if(arr[i]==this.activated){scale = 1.5; y-=30;}
+        path.clearQueue().stop().css("z-index", Math.round(y/10));
+        if(perspective && transition){
+            path.css(transition.css, transform.css+" 1.3s cubic-bezier("+bezcss+")");
+            path.css(transform.css, "translate3d("+x+"px,"+y+"px,0) scale("+scale+")");
+        }else{
+            path.animate({transformJ:'translate('+x+','+y+') scale('+scale+')'},{queue:true, duration:1300, specialEasing: {transformJ:bez}});
+        }
+    }
+    $("#"+this.reference+"-item-"+this.deactivated).removeClass("active");
+    $("#"+this.reference+"-item-"+this.activated).addClass("active").css("z-index",100);
+}
+
+example9.click.scrollClick = function(){
+    var path = $("#"+this.reference+"-click-scrollIn");
+    path.addClass("active");
+}
+example9.click.scrollMove = function(){
+    var path = $("#"+this.reference+"-click-scrollIn");
+    if(perspective && transition){
+        path.css(transition.css, transform.css+" 0s");
+        path.css(transform.css, "translate3d("+this.scrollPosition+"px,0,0)");
+    }else{
+        path.clearQueue().stop().animate({left:this.scrollPosition},{queue:true, duration:0, specialEasing: {left:bez}});
+    }
+}
+example9.click.scrollRelease = function(){
+    var path = $("#"+this.reference+"-click-scrollIn");
+    path.removeClass("active");
+    if(perspective && transition){
+        path.css(transition.css, transform.css+" 1.2s cubic-bezier("+bezcss+") 0s");
+        path.css(transform.css, "translate3d("+this.scrollPosition+"px,0,0)");
+    }else{
+        path.clearQueue().stop().animate({left:this.scrollPosition},{queue:true, duration:300, specialEasing: {left:bez}});
+    }
+}
+example9.click.dragMove = function(){
+    var path = $("#"+this.reference+"-click-dragIn");
+    if(perspective && transition){
+        path.css(transition.css, transform.css+" 0s");
+        path.css(transform.css, "translate3d("+this.dragPosition+"px,0,0)");
+    }else{
+        path.clearQueue().stop().animate({left:this.dragPosition},{queue:true, duration:0, specialEasing: {left:bez}});
+    }
+}
+example9.click.dragRelease = function(){
+    var path = $("#"+this.reference+"-click-dragIn");
+    if(perspective && transition){
+        path.css(transition.css, transform.css+" 1.2s cubic-bezier("+bezcss+") 0s");
+        path.css(transform.css, "translate3d("+this.dragPosition+"px,0,0)");
+    }else{
+        path.clearQueue().stop().animate({left:this.dragPosition},{queue:true, duration:300, specialEasing: {left:bez}});
+    }
+}
+
+example9.init();
+</script>
+<script type="text/javascript">
+    window.onload = function(){
+        $("item-1").trigger("scrollClick");
+        $('.dot').empty();
+    }
+</script>
+{% endblock %}

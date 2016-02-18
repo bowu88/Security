@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="/static/style/article.css">
+<section class="article">
+	<h2>{{ article.title }}</h2>
+	<p>
+		<span>
+			发表时间：{{ article.time }}
+		</span>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		<span>
+			作者：{{ article.author }}
+		</span>
+	</p>
+	{% autoescape off %}
+	<div class="a_content">{{ article.content }}</div>
+	{% endautoescape %}
+</section>
+{% endblock %}

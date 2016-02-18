@@ -1,0 +1,33 @@
+.article{
+	width: 77.8916%;
+	background-color: rgb(255, 255, 255);
+	margin: 1.4641% auto 1.2445% auto;
+	-webkit-box-shadow: 0 0 10px rgb(14, 60, 93);
+	-moz-box-shadow: 0 0 10px rgb(14, 60, 93);
+	box-shadow: 0 0 40px rgb(14, 60, 93);
+}
+.article>*{
+	width: 76.4097%;
+	margin: 0 auto;
+}
+.article>h2{
+	font-size: 1.5em;
+	line-height: 3.3333em;
+	color: rgb(24, 104, 160);
+	text-align: center;
+}
+.article>p{
+	margin-bottom: 2.3469%;
+	text-align: center;
+	text-indent: 2em;
+}
+.article>img{
+	display: block;
+	max-width: 100%;
+}
+.a_content{
+	font-size: 1em;
+	margin-top: 3.7593%;
+	margin-bottom: 4.8872%;
+	line-height: 1.875em;
+}

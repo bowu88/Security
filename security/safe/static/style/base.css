@@ -1,0 +1,138 @@
+*{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+body{
+	font-family: serif;
+	background-color: rgb(24, 104, 160);
+}
+img{
+	max-width: 100%;
+}
+/* 顶部Banner图片 */
+header{
+	position: relative;
+	width: 100%;
+}
+header img{
+	display: block;
+	max-width: 100%;
+	margin: 0 auto;
+}
+	/* 顶部的字 */
+	.font{
+		position: absolute;
+		top: 0;
+		right: 0;
+		overflow: hidden;
+	}
+/* 导航栏 */
+nav{
+	position: relative;
+	width: 100%;
+	height: 40px;
+	background-image: url(../images/nav-back.png);
+	background-size: 100% 100%;
+}
+nav ul{
+	width: 77.7452%;
+	word-spacing:-0.35em; /*让li的间隙消失*/
+	position: relative;
+	top: 5px;
+	height: 30px;
+	margin: 0 auto;
+	text-align: center;
+}
+nav li{
+	position: relative;
+	display: inline-block;
+	width: 15.6509%;
+	height: 100%;
+	border-left : 1px solid rgb(48, 119, 170);
+	border-right: 2px solid rgba(20, 87, 134, 0.8);
+}
+nav a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	line-height: 30px;
+	text-decoration: none;
+	font-weight: bolder;
+	font-size: 1.1875em;
+	color: rgb(255, 255, 255);
+}
+nav a:hover, nav a:visited, nav a:active{
+	background-color: rgb(16, 78, 122);
+}
+/* 滚动字块 */
+.active-words{
+	width: 100%;
+	height: 37px;
+	background-color: rgb(255, 255, 255);
+}
+.active-words marquee{
+	width: 100%;
+	height: 100%;
+	font-size: 1.0625em;
+}
+.active-words marquee span{
+	display: inline-block;
+	line-height: 37px;
+}
+.active-words marquee span:last-child{
+	margin-left: 18.7408%;
+}
+/* 脚部 */
+footer{
+	width: 100%;
+	height: 193px;
+}
+	/* 友情链接 */
+	.friend-link{
+		word-spacing: -0.35em;
+		margin: 0 auto;
+		text-align: center;
+		width: 77.7452%;
+		height: 39px;
+		line-height: 39px;
+		list-style: none;
+	}
+	.friend-link li{
+		width: 12.5%;
+		display: inline-block;
+		border-right: 1px solid rgb(161, 175, 168);
+	}
+	.friend-link li:last-child{
+		border: 0;
+	}
+	.friend-link a{
+		text-decoration: none;
+		color: rgb(252, 253, 253);
+	}
+	.friend-link a:hover{
+		text-decoration: underline;
+		color: rgb(255, 255, 255);
+		font-weight: bolder;
+	}
+	/* 版权 */
+	.copyright{
+		width: 100%;
+		height: 123px;
+		text-align: center;
+		line-height: 29px;
+		color: rgb(60, 85, 105);
+		background-color: rgb(255, 255, 255);
+	}
+	.copyright>p:first-child{
+		padding-top: 18px;
+	}
+	/*技术支持*/
+	footer>span{
+		display: block;
+		width: 100%;
+		height: 31px;
+		line-height: 31px;
+		text-align: center;
+		color: rgb(255, 255, 255);
+	}

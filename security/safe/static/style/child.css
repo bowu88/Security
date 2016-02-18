@@ -1,0 +1,81 @@
+.child{
+	width: 75.1098%;
+	margin: 1.4641% auto 1.2445% auto;
+}
+.child a{
+	color: black;
+}
+.child a:hover{
+	color: green;
+}
+/* 侧栏导航 */
+.option{
+	width: 22.0272%;
+	float: left;
+}
+.option>ul{
+	width: 87.1681%;
+}
+.option>ul li{
+	width: 100%;
+	height: 34px;
+	margin-bottom: 0.8849%;
+	border-radius: 2.0304%;
+	background-color: rgb(255, 255, 255);
+}
+.option>ul a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	color: black;
+	line-height: 34px;
+	text-decoration: none;
+}
+.option>ul a:hover{
+	background-color: rgb(215, 216, 216);
+}
+.option>h2{
+	width: 87.1681%;
+	height: 39px;
+	margin-bottom: 0.8849%;
+	border-radius: 2.0304%;
+	background-color: rgb(10, 94, 137);
+	line-height: 39px;
+	color: white;
+	-moz-box-shadow:0 0 1px 1px rgba(0, 0, 0, 0.52);
+	-webkit-box-shadow:0 0 1px 1px rgba(0, 0, 0, 0.52);
+	box-shadow:0 0 1px 1px rgba(0, 0, 0, 0.52);
+}
+.option>h2 span{
+	padding-left: 11.1675%;
+}
+.option>ul span{
+	padding-left: 12.1827%;
+}
+/* 文章 */
+.child-list{
+	width: 76.9727%;
+	float: right;
+	background-color: rgb(255, 255, 255);
+}
+.child-list>*{
+	margin-left: 3%;
+}
+.child-list>ul{
+	margin-top: 1.8%;
+}
+.child-list li{
+	list-style: square inside;
+}
+.child-list>div{
+	margin-top: 1%;
+	margin-bottom: 1.8%;
+}
+.child-list a{
+	text-decoration: none;
+	line-height: 1.6em;
+}
+/* 清除浮动 */
+.clear{
+	clear: both;
+}

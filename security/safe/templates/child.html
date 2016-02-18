@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="child">
+	<link rel="stylesheet" href="/static/style/child.css">
+	<aside class="option">
+		<h2><span>{{ pageTag }}</span></h2>
+		<ul>
+		{% for key, value in tags.items %}
+		<li><a href="/{{ pageGroup }}/{{ key }}"
+		><span>{{ value }}</span></a></li>
+		{% endfor %}
+		</ul>
+	</aside>
+	<section class="child-list">
+		<ul>
+			{% for group in contacts %}
+			<li><a href="/articles/{{ group.id }}">{{ group.title }}</a></li>
+			{% endfor %}
+		</ul>
+		<div>
+			{% if Tag == 'all' %}
+			<a href="/{{ pageGroup }}/1/">首页</a>
+			{% else %}
+			<a href="/{{ pageGroup }}/{{ Tag }}/0/">首页</a>
+			{% endif %}
+			{% if not contacts.has_previous %}
+			<span>上一页</span>
+			{% elif Tag == 'all' %}
+			<a href="/{{ pageGroup }}/{{ contacts.previous_page_number }}/">上一页</a>
+			{% else %}
+			<a href="/{{ pageGroup }}/{{ Tag }}/{{ contacts.previous_page_number }}">上一页</a>
+			{% endif %}
+			{% if Tag == 'all' %}
+			{% for number in numbers %}
+			<a href="/{{ pageGroup }}/{{ number }}/">{{ number }}</a>
+			{% endfor %}
+			{% else %}
+			<a href="/{{ pageGroup }}/{{ Tag }}/{{ number }}/">{{ number }}</a>
+			{% endif %}
+			{% if not contacts.has_next %}
+			<span>下一页</span>
+			{% elif Tag == 'all' %}
+			<a href="/{{ pageGroup }}/{{ contacts.next_page_number }}/">下一页</a>
+			{% else %}
+			<a href="/{{ pageGroup }}/{{ Tag }}/{{ contacts.next_page_number }}/">下一页</a>
+			{% endif %}
+			{% if Tag == 'all' %}
+			<a href="/{{ pageGroup }}/{{ groups.num_pages }}/">末页</a>
+			{% else %}
+			<a href="/{{ pageGroup }}/{{ Tag }}/{{ groups.num_pages }}/">末页</a>
+			{% endif %}
+		</div>
+	</section>
+	<div class="clear"></div>
+</div>
+{% endblock %}

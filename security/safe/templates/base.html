@@ -1,0 +1,61 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>中南民族大学——保卫处</title>
+    <link rel="stylesheet" href="{% static 'style/base.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="{% static 'script/jquery-1.7.min.js' %}"></script>
+</head>
+<body>
+    <header>
+        <img src="{% static 'images/banner.png' %}" alt="宣传图">
+        <img src="{% static 'images/font1.jpg' %}" alt="" class="font font1">
+        <img src="{% static 'images/font2.jpg' %}" alt="" class="font font2">
+        <img src="{% static 'images/font3.jpg' %}" alt="" class="font font3">
+        <img src="{% static 'images/font4.jpg' %}" alt="" class="font font4">
+        <img src="{% static 'images/font5.jpg' %}" alt="" class="font font5">
+        <img src="{% static 'images/font6.jpg' %}" alt="" class="font font6">
+        <img src="{% static 'images/font7.jpg' %}" alt="" class="font font7">
+        <img src="{% static 'images/font8.jpg' %}" alt="" class="font font8">
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/">首页</a></li>
+            <li><a href="/group/">部门设置</a></li>
+            <li><a href="/knowledge/">安全知识</a></li>
+            <li><a href="/system/">安全制度</a></li>
+            <li><a href="/govern/">综合治理</a></li>
+            <li><a href="/guide/">服务指南</a></li>
+        </ul>
+    </nav>
+    <div class="active-words">
+        <marquee behavior="scroll" direction="left">
+            <span>{{ nowTime }}</span>
+            <span>欢迎来到中南民族大学安全保卫处，携手共建平安校园！</span>
+        </marquee>
+    </div>
+    {% block content %}
+    {% endblock %}
+    <footer>
+        <ul class="friend-link">
+            <li><a href="">友情链接</a></li>
+            <li><a href="mailto:znmdbwc@163.com" target="_blank">保卫处信箱</a></li>
+            <li><a href="http://www.mps.gov.cn/" target="_blank">中国公安部</a></li>
+            <li><a href="http://www.moj.gov.cn/" target="_blank">中国司法部</a></li>
+            <li><a href="http://www.legalinfo.gov.cn/" target="_blank">中国普法网</a></li>
+            <li><a href="http://www.chinalawnet.com/" target="_blank">中国法律网</a></li>
+            <li><a href="http://www.whga.gov.cn/" target="_blank">武汉公安网</a></li>
+            <li><a href="http://www1.scuec.edu.cn/flyz/" target="_blank">民大法律诊所</a></li>
+        </ul>
+        <div class="copyright">
+                <p>版权所有© 2015 中南民族大学保卫处</p>
+                <p>地址：武汉市洪山区民族大道182号</p>
+                <p>邮编:430074</p>
+        </div>
+        <span>技术支持：比特工场</span>
+    </footer>
+</body>
+<script src="{% static 'script/index.js' %}"></script>
+</html>
